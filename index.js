@@ -1,5 +1,5 @@
 let resultado = calcularPartidas(193, 93)
-function calcularPartidas(vitorias, derrotas){
+class heroi (vitorias, derrotas){
     let saldo = vitorias - derrotas
     if (saldo <= 10 ){
 console.log(`O herói tem de saldo de ${saldo} e está no nível ferro.`)
