@@ -7,32 +7,32 @@
     }
   
     atacar() {
-      let resultado = this.calcularPartidas(213, 103);
+      let ataque = '';
   
-      if (resultado <= 10) {
-        console.log(`O herói tem de saldo ${resultado} e está no nível ferro.`);
-      } else if (resultado >= 11 && resultado <= 20) {
-        console.log(`O herói tem de saldo ${resultado} e está no nível bronze.`);
-      } else if (resultado >= 21 && resultado <= 50) {
-        console.log(`O herói tem de saldo ${resultado} e está no nível prata.`);
-      } else if (resultado >= 51 && resultado <= 80) {
-        console.log(`O herói tem de saldo ${resultado} e está no nível ouro.`);
-      } else if (resultado >= 81 && resultado <= 90) {
-        console.log(`O herói tem de saldo ${resultado} e está no nível diamante.`);
-      } else if (resultado >= 91 && resultado <= 100) {
-        console.log(`O herói tem de saldo ${resultado} e está no nível lendário.`);
-      } else if (resultado >= 101) {
-        console.log(`O herói tem de saldo ${resultado} e está no nível imortal.`);
-      } else {
-        console.log(`Ranking inexistente.`);
+      switch (this.tipo) {
+        case 'mago':
+          ataque = 'magia';
+          break;
+        case 'guerreiro':
+          ataque = 'espada';
+          break;
+        case 'monge':
+          ataque = 'artes marciais';
+          break;
+        case 'ninja':
+          ataque = 'shuriken';
+          break;
+        default:
+          ataque = 'um ataque indefinido';
+          break;
       }
-    }
   
-    calcularPartidas(vitorias, derrotas) {
-      let saldo = vitorias - derrotas;
-      return saldo;
+      console.log(`O ${this.tipo} ${this.nome} de ${this.idade} de idade, atacou usando ${ataque}.`);
     }
-    
   }
-  let heroi = new Heroi("Frida", 28, "Guerreiro");
-heroi.atacar();
+
+
+
+  const meuHeroi = new Heroi('Frida', 215, 'mago');
+
+  meuHeroi.atacar();
